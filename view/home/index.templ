@@ -1,10 +1,9 @@
 package home
 
-import "github.com/a-h/templ"
-import "github.com/a-h/templ/examples/base"
+import "github.com/aminasadiam/Shop/view"
 
 templ Index() {
-	@base.Base() {
+	@view.Base("صفحه اصلی") {
 		<div class="container mx-auto px-4 py-8">
 			<h1 class="text-4xl font-bold mb-8">Welcome</h1>
 			<p class="text-lg">This is the home page.</p>
