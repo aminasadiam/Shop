@@ -6,10 +6,41 @@ templ Base(title string) {
 		<head>
 			<meta charset="UTF-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-			<title>{ title }</title>
+			<script src="https://cdn.tailwindcss.com"></script>
+            <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+			<title>{ title } | Shop</title>
 		</head>
 		<body>
-			{ children... }
+			<nav class="bg-gray-800 text-white">
+				<div class="container mx-auto px-4">
+					<div class="flex items-center justify-between h-16">
+						<div class="flex items-center">
+							<a href="/" class="flex items-center">
+								<span class="text-xl font-bold">Shop</span>
+							</a>
+							<div class="hidden md:block ml-10">
+								<div class="flex items-baseline space-x-4">
+									<a href="/" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">Home</a>
+									<a href="/products" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">Products</a>
+									<a href="/categories" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">Categories</a>
+								</div>
+							</div>
+						</div>
+						<div class="flex items-center">
+							<a href="/login" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700">Login</a>
+							<a href="/register" class="ml-4 px-3 py-2 rounded-md text-sm font-medium bg-blue-500 hover:bg-blue-600">Register</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div class="container mx-auto px-4 py-8">
+				{ children... }
+			</div>
+			<footer class="bg-gray-800 text-white fixed bottom-0 w-full">
+				<div class="container mx-auto px-4 py-8">
+					<p class="text-center text-sm">© 2024 Shop. All rights reserved.</p>
+				</div>
+			</footer>
 		</body>
 	</html>
 }

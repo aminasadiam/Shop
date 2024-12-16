@@ -28,4 +28,8 @@ func initRoutes(mux *http.ServeMux) {
 	// user authentication
 	mux.HandleFunc("/login", handler.LoginHandler)
 	mux.HandleFunc("/register", handler.RegisterHandler)
+
+	// product
+	mux.HandleFunc("/products", handler.ProductListHandler)
+	mux.HandleFunc("/categories", handler.ProductCategoriesHandler)
 }

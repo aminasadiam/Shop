@@ -12,9 +12,9 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func LoginHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Login"))
+	home.Login().Render(context.Background(), w)
 }
 
 func RegisterHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Register"))
+	home.Register().Render(context.Background(), w)
 }

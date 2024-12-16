@@ -7,7 +7,7 @@ GOGET=$(GOCMD) get
 GOMOD=$(GOCMD) mod
 BINARY_NAME=Shop
 
-all: run
+all: template run
 
 build:
 	$(GOBUILD) -o $(BINARY_NAME) -v
@@ -31,5 +31,8 @@ tidy:
 
 migrate:
 	$(GOCMD) run ./internal/migration/migrate.go
+
+template:
+	templ generate
 
 .PHONY: all build test clean run deps tidy
